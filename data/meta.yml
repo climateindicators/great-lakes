@@ -1,0 +1,77 @@
+indicator:
+  name: Great Lakes Water Levels and Temperatures
+  slug: great-lakes
+  publisher: U.S. Environmental Protection Agency
+  source_page: https://19january2025snapshot.epa.gov/climate-indicators/great-lakes/index.html
+  technical_documentation: https://19january2025snapshot.epa.gov/system/files/documents/2024-06/great-lakes_documentation.pdf
+  rights: Public domain, work of the U.S. Government (17 U.S.C. 105)
+datasets:
+- file: great_lakes_water_levels.csv
+  figure: Figure 1
+  figure_title: Figure 1. Water Levels of the Great Lakes, 1860-2023
+  source_file: great-lakes_fig-1.csv
+  source_sha256: e4415f28b21056fdc0ef5da025c7abccfbbe546b9ed5c7bf20b31da6d5f37c86
+  source_encoding: UTF-8
+  data_source: NOAA, 2024
+  web_update: June 2024
+  unit: feet
+  rows: 1968
+  columns:
+  - name: year
+    type: integer
+    description: Calendar year.
+  - name: lake
+    type: string
+    description: Lake name as EPA labels it in this figure.
+  - name: series
+    type: string
+    description: level (annual mean water level), upper_bound or lower_bound (the
+      bounds EPA plots around it).
+  - name: value
+    type: number
+    description: Water level in feet relative to the lake's long-term average, as
+      published.
+- file: great_lakes_temp_annual.csv
+  figure: Figure 2
+  figure_title: Figure 2. Surface Water Temperatures of the Great Lakes, 1995-2023
+  source_file: great-lakes_fig-2.csv
+  source_sha256: 6c17ef5803c3369f997d6a2ae6df7c790b5d3bbe5da0febaaefd329708d2a960
+  source_encoding: windows-1252
+  data_source: NOAA, 2024
+  web_update: June 2024
+  unit: °F
+  rows: 145
+  columns:
+  - name: year
+    type: integer
+    description: Calendar year.
+  - name: lake
+    type: string
+    description: Lake name as EPA labels it in this figure.
+  - name: value
+    type: number
+    description: Annual average surface water temperature in degrees Fahrenheit.
+- file: great_lakes_temp_daily.csv
+  figure: Figure 2
+  figure_title: Figure 2. Surface Water Temperatures of the Great Lakes, 1995-2023
+  source_file: great-lakes_fig-2.csv
+  source_sha256: 6c17ef5803c3369f997d6a2ae6df7c790b5d3bbe5da0febaaefd329708d2a960
+  source_encoding: windows-1252
+  data_source: NOAA, 2024
+  web_update: June 2024
+  unit: °F
+  rows: 3660
+  columns:
+  - name: julian_day
+    type: integer
+    description: Day of the year, 1 to 366.
+  - name: lake
+    type: string
+    description: Lake name as EPA labels it in this figure.
+  - name: period
+    type: string
+    description: 'Averaging period: 2014-2023 or 1995-2004.'
+  - name: value
+    type: number
+    description: Average surface water temperature on that day over the period, in
+      degrees Fahrenheit.
